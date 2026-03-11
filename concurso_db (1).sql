@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 26/02/2026 às 15:35
+-- Tempo de geração: 11/03/2026 às 11:49
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -40,7 +40,6 @@ CREATE TABLE `candidatas` (
 INSERT INTO `candidatas` (`codcandidatas`, `empresa`, `nome`) VALUES
 (1, 'Espaço Afrodite', 'Alice Inês Fischer'),
 (2, 'Francine Berté Pilates', 'Dienifer Maciel'),
-(3, 'Moda & Esporte', 'Dieniffer Wolmann Leal'),
 (4, 'Kondor Turismo', 'Djenifer Kamili Hatmann'),
 (5, 'Autoelétrica Clarear', 'Emili Taíssa Angnes'),
 (6, 'Edufut', 'Emilyn Dandara Petry'),
@@ -93,6 +92,13 @@ CREATE TABLE `nota` (
   `nota3_entrevista` decimal(3,1) NOT NULL,
   `nota4_desfile` decimal(3,1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `nota`
+--
+
+INSERT INTO `nota` (`codnota`, `jurado_id`, `candidata_id`, `nota1_teorica`, `nota2_video`, `nota3_entrevista`, `nota4_desfile`) VALUES
+(1, 2, 14, 6.0, 10.0, 10.0, 10.0);
 
 --
 -- Índices para tabelas despejadas

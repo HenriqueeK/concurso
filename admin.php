@@ -10,7 +10,7 @@ $ranking = $conn->query("
         c.codcandidatas,
         c.nome,
         c.empresa,
-        ROUND(AVG((n.nota1_teorica + n.nota2_video + n.nota3_entrevista + n.nota4_desfile) / 4) * 2) / 2 AS media,
+        ROUND(AVG((n.nota1_teorica + n.nota2_video + n.nota3_entrevista + n.nota4_desfile) / 4), 2) AS media,
         COUNT(n.codnota) AS total_jurados
     FROM candidatas c
     LEFT JOIN nota n ON c.codcandidatas = n.candidata_id
@@ -28,7 +28,7 @@ $detalhe = $conn->query("
         n.nota2_video,
         n.nota3_entrevista,
         n.nota4_desfile,
-        ROUND(((n.nota1_teorica + n.nota2_video + n.nota3_entrevista + n.nota4_desfile) / 4) * 2) / 2 AS media_ind
+        ROUND(((n.nota1_teorica + n.nota2_video + n.nota3_entrevista + n.nota4_desfile) / 4), 2) AS media_ind
     FROM nota n
     JOIN candidatas c ON n.candidata_id = c.codcandidatas
     JOIN jurados j    ON n.jurado_id    = j.codjurados
@@ -122,7 +122,7 @@ $possivel         = $total_jurados * $total_candidatas;
                     </td>
                     <td>
                         <?php if ($r["media"] !== null): ?>
-                            <span class="media-badge"><?php echo number_format((float)$r["media"], 1); ?></span>
+                            <span class="media-badge"><?php echo number_format((float)$r["media"], 2); ?></span>
                         <?php else: ?>
                             <span style="color:var(--text-dim); font-size:13px;">Sem notas</span>
                         <?php endif; ?>
@@ -167,7 +167,7 @@ $possivel         = $total_jurados * $total_candidatas;
                     <td><?php echo number_format((float)$d["nota2_video"], 1); ?></td>
                     <td><?php echo number_format((float)$d["nota3_entrevista"], 1); ?></td>
                     <td><?php echo number_format((float)$d["nota4_desfile"], 1); ?></td>
-                    <td><strong style="color:var(--gold-light);"><?php echo number_format((float)$d["media_ind"], 1); ?></strong></td>
+                    <td><strong style="color:var(--gold-light);"><?php echo number_format((float)$d["media_ind"], 2); ?></strong></td>
                 </tr>
                 <?php endwhile; ?>
             </tbody>

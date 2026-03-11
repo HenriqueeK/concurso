@@ -205,11 +205,10 @@ function verificarTodos() {
     msg.textContent = todas ? "" : "Preencha todas as notas para salvar.";
 
     if (todas) {
-        const media = soma / 4;
-        // Arredonda para .0 ou .5
-        const arredondado = Math.round(media * 2) / 2;
         mediaDiv.style.display = "block";
-        mediaVal.textContent = arredondado.toFixed(1);
+        // Arredonda para .0 ou .5
+        mediaVal.textContent = (soma / 4).toFixed(2);
+;
     } else {
         mediaDiv.style.display = "none";
     }

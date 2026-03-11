@@ -9,7 +9,6 @@ define('FOTO_BASE', 'https://raw.githubusercontent.com/HenriqueeK/concurso/main/
 define('FOTO_MAPA', [
     1  => 'alice-fischer',
     2  => 'dienifer-maciel',
-    3  => 'dieniffer-leal',
     4  => 'djenifer-hatmann',
     5  => 'emili-agnes',
     6  => 'emilyn-petry',
