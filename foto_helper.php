@@ -2,6 +2,7 @@
 /**
  * foto_helper.php
  * Fotos em: https://github.com/HenriqueeK/concurso/tree/main/fotos-candidatas
+ * Para usar fotos locais, troque FOTO_BASE por 'fotos-candidatas'
  */
 
 define('FOTO_BASE', 'https://raw.githubusercontent.com/HenriqueeK/concurso/main/fotos-candidatas');
@@ -9,7 +10,6 @@ define('FOTO_BASE', 'https://raw.githubusercontent.com/HenriqueeK/concurso/main/
 define('FOTO_MAPA', [
     1  => 'alice-fischer',
     2  => 'dienifer-maciel',
-    3  => 'dieniffer-leal',
     4  => 'djenifer-hatmann',
     5  => 'emili-agnes',
     6  => 'emilyn-petry',

@@ -9,7 +9,7 @@ if ($conn->connect_error) {
 
 $conn->set_charset("utf8mb4");
 
-// Helper: redireciona se não estiver logado
+// Redireciona se não estiver logado
 function requireLogin() {
     if (!isset($_SESSION["id"])) {
         header("Location: login.php");
@@ -17,11 +17,10 @@ function requireLogin() {
     }
 }
 
-// Helper: redireciona se não for admin
+// Redireciona se não for admin
 function requireAdmin() {
     if (!isset($_SESSION["admin"]) || !$_SESSION["admin"]) {
         header("Location: avaliacao.php");
         exit;
     }
 }
-?>
